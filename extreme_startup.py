@@ -1,16 +1,19 @@
 import socket
-
 import requests
 from flask import Flask, request
+
 app = Flask(__name__)
 
 
-def solve_add_question(question):
-    return '4'
+def test_calculate_answer(question):
+    if 'sun' in question:
+        return 'Yellow'
+    return ''
 
 
 def calculate_answer(question):
     return ''
+
 
 @app.route("/")
 def answer():
@@ -20,9 +23,9 @@ def answer():
     print(r)
     return calculate_answer(q)
 
+
 if __name__ == "__main__":
     ip = socket.gethostbyname(socket.gethostname())
-    respons = requests.get("http://YOUR IP HERE:5000", {'ip':ip})
+    respons = requests.get("http://YOUR IP HERE:5000", {'ip': ip})
 
     app.run(debug=True, host='0.0.0.0')
-
