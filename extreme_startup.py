@@ -26,6 +26,6 @@ def answer():
 
 if __name__ == "__main__":
     ip = socket.gethostbyname(socket.gethostname())
-    respons = requests.get("http://YOUR IP HERE:5000", {'ip': ip})
+    respons = requests.get("http://SERVER_IP_HERE:5000", {'ip':ip})
 
     app.run(debug=True, host='0.0.0.0')
